@@ -132,7 +132,7 @@ NSString *const kXMLReaderTextNodeKey = @"text";
     // Set the text property
     if ([textInProgress length] > 0)
     {
-        [dictInProgress setObject:textInProgress forKey:kXMLReaderTextNodeKey];
+		[dictInProgress setObject:[textInProgress stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:kXMLReaderTextNodeKey];
 
         // Reset the text
         [textInProgress release];
